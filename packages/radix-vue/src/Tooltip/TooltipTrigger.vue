@@ -7,7 +7,7 @@ export type TooltipTriggerDataState =
   | 'delayed-open'
   | 'instant-open'
 
-export interface TooltipTriggerProps extends PrimitiveProps {}
+export interface TooltipTriggerProps extends PrimitiveProps { }
 </script>
 
 <script setup lang="ts">
@@ -17,7 +17,7 @@ import { PopperAnchor } from '@/Popper'
 import {
   Primitive,
 } from '@/Primitive'
-import { injectTooltipProviderContext } from './TooltipProvider.vue'
+import { injectTooltipProviderContext } from './tooltipProvider'
 
 const props = withDefaults(defineProps<TooltipTriggerProps>(), {
   as: 'button',
@@ -101,8 +101,7 @@ function handleClick() {
   <PopperAnchor as-child>
     <Primitive
       :ref="forwardRef"
-      :aria-describedby="
-        rootContext.open.value ? rootContext.contentId : undefined
+      :aria-describedby="rootContext.open.value ? rootContext.contentId : undefined
       "
       :data-state="rootContext.stateAttribute.value"
       :as="as"

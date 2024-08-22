@@ -8,9 +8,9 @@ describe('given default Tooltip', () => {
   let wrapper: VueWrapper<InstanceType<typeof Tooltip>>
 
   globalThis.ResizeObserver = class ResizeObserver {
-    observe() {}
-    unobserve() {}
-    disconnect() {}
+    observe() { }
+    unobserve() { }
+    disconnect() { }
   }
   beforeEach(() => {
     document.body.innerHTML = ''
